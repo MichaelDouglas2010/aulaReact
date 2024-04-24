@@ -1,23 +1,14 @@
 .divFormat{
   border-radius: 2px;
-  border-color: black;
   font: 12pt Arial;
+  border-color: white;
   border-width: 2px;
-  width: 350px;
-  height: 450px;
   flex-wrap: wrap;
   text-align: center;
   margin: 0 auto;
 } 
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  background-color:white;
-  
-}
 .borda{
   border-width: 10px;
   border-style: solid; 
-  border-color: rgb(38, 29, 176); 
+  border-color: rgb(29, 136, 185); 
 }
