@@ -14,12 +14,16 @@ function Tarefas(){
         {id: 2, nome:"Tarefa 02", concluida:false}
 
     ])
+    function apagarTarefa(id: number){
+        const tarefasAtualizadas = tarefas.filter((tarefa) => tarefa.id !== id)
+        setTarefas(tarefasAtualizadas)
+    }
     return(
         <Layout>
             <h1>
                 Tarefas
             </h1>
-            <FormTarefa tarefas={tarefas} setTarefas={setTarefas}/>
+            <FormTarefa tarefas={tarefas} setTarefas={setTarefas} apagarTarefa={apagarTarefa}/>
             {
                 tarefas.map((tarefa)=>(
                     <Itemtarefa titulo={tarefa.nome} idTarefa={tarefa.id}/>
