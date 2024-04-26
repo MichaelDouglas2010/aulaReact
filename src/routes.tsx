@@ -2,7 +2,7 @@ import { RouterProvider,createBrowserRouter } from 'react-router-dom'
 import Home from './pages/home'
 import Sobre from './pages/sobre'
 import NotFound from './pages/404'
-import Tarefas from './pages/tarefas'
+import Tarefas from './tarefas'
 
 const router = createBrowserRouter([
   {path: '/', element: <Home/>, errorElement: <NotFound/>},
