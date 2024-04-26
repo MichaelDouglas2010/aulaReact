@@ -2,12 +2,9 @@ import { useState } from "react";
 import Layout from "../components/layout";
 import Itemtarefa from "./tarefa";
 import FormTarefa from "../components/form-tarefa";
+import Tarefa from "../assets/interface";
 
-interface Tarefa{
-    id: number
-    nome: string
-    concluida: boolean
-}
+
 function Tarefas(){
     const[tarefas, setTarefas]= useState<Tarefa[]>([
         {id: 1, nome: "Tarefa 01", concluida: false},
@@ -23,10 +20,10 @@ function Tarefas(){
             <h1>
                 Tarefas
             </h1>
-            <FormTarefa tarefas={tarefas} setTarefas={setTarefas} apagarTarefa={apagarTarefa}/>
+            <FormTarefa tarefas={tarefas} setTarefas={setTarefas} />
             {
                 tarefas.map((tarefa)=>(
-                    <Itemtarefa titulo={tarefa.nome} idTarefa={tarefa.id}/>
+                    <Itemtarefa titulo={tarefa.nome} idTarefa={tarefa.id} apagarTarefa={apagarTarefa}/>
                 ))
             }
         </Layout>

@@ -3,8 +3,9 @@ import { IoMdToday } from "react-icons/io";
 interface ItemtarefaProps{
     titulo: string
     idTarefa: number
+    apagarTarefa: any
 }
-function Itemtarefa({titulo,idTarefa}:ItemtarefaProps){
+function Itemtarefa({titulo,idTarefa,apagarTarefa}:ItemtarefaProps){
     return(
         <Grid templateColumns="3fr 1fr"
         p={5} backgroundColor="gray">
@@ -13,7 +14,7 @@ function Itemtarefa({titulo,idTarefa}:ItemtarefaProps){
             </Box>
             <Box>
                 <Button colorScheme="green">Concluir</Button>
-                <Button  colorScheme="red">Encerrar</Button>
+                <Button  colorScheme="red" onClick={() => apagarTarefa(idTarefa)}>Remover</Button>
             </Box>
         </Grid>
     )

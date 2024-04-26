@@ -1,5 +1,6 @@
 import { Button, Checkbox, Flex, Input } from "@chakra-ui/react";
 import { useState } from "react";
+import Tarefa from "../../assets/interface";
 interface FormTarefaProps{
     tarefas: Tarefa[]
     setTarefas: any
