@@ -8,11 +8,7 @@ function Tarefas(){
             <div className="divFormat">
                 <h1>Lista de Tarefas</h1>
                 <ListTarefas/>
-                <div className="txt">
-                    <li>Tarefa 01</li>
-                    <li>Tarefa 02</li>
-                    <li>Tarefa 03</li>
-                </div>
+               
             </div>
         </Layout>
     )
