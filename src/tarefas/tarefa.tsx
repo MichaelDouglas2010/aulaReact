@@ -3,7 +3,7 @@ import { IoMdToday } from "react-icons/io";
 interface ItemtarefaProps{
     titulo: string
     idTarefa: number
-    apagarTarefa: any
+    apagarTarefa (id:number):void
 }
 function Itemtarefa({titulo,idTarefa,apagarTarefa}:ItemtarefaProps){
     return(

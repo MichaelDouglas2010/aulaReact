@@ -1,16 +1,28 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Layout from "../components/layout";
 import Itemtarefa from "./tarefa";
 import FormTarefa from "../components/form-tarefa";
-import Tarefa from "../assets/interface";
+import Tarefa from "../interface";
+
 
 
 function Tarefas(){
-    const[tarefas, setTarefas]= useState<Tarefa[]>([
-        {id: 1, nome: "Tarefa 01", concluida: false},
-        {id: 2, nome:"Tarefa 02", concluida:false}
+    const[tarefas, setTarefas]= useState<Tarefa[]>([])
 
-    ])
+    function carregarLista(){
+        return [
+            {id: 1, nome: "Tarefa 01", concluida: false},
+            {id: 2, nome:"Tarefa 02", concluida:false}]
+    }
+
+    useEffect(() =>{
+        const tarefas = carregarLista()
+        setTarefas(tarefas)
+    },[]) // Pode passa uma dependencia que toda fez que alterda ele carrega a função
+
+    /*useEffect(() =>{
+        alert('Tarefa alterada!')
+    },[tarefas])*/
     function apagarTarefa(id: number){
         const tarefasAtualizadas = tarefas.filter((tarefa) => tarefa.id !== id)
         setTarefas(tarefasAtualizadas)
@@ -23,7 +35,7 @@ function Tarefas(){
             <FormTarefa tarefas={tarefas} setTarefas={setTarefas} />
             {
                 tarefas.map((tarefa)=>(
-                    <Itemtarefa titulo={tarefa.nome} idTarefa={tarefa.id} apagarTarefa={apagarTarefa}/>
+                    <Itemtarefa key={tarefa.id} titulo={tarefa.nome} idTarefa={tarefa.id} apagarTarefa={apagarTarefa}/>
                 ))
             }
         </Layout>
